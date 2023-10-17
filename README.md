@@ -1,5 +1,5 @@
 # Ironmon-Tracker
-This is a in developement fork of the https://github.com/besteon/Ironmon-Tracker that aims to adept the tracker to work for gen1  games 
+This is a in developement fork of the https://github.com/besteon/Ironmon-Tracker that aims to adept the tracker to work for gen 2  games 
 
 This project is based on [MKDasher's PokemonBizhawkLua project](https://github.com/besteon/Ironmon-Tracker).
 
