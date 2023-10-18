@@ -257,7 +257,7 @@ function DataHelper.buildTrackerScreenDisplay(forceView)
 		end
 
 		-- Update: If STAB
-		if Battle.inBattle then
+		if Battle.inBattle and data.x.viewingOwn then
 			local ownTypes = Program.getPokemonTypes(data.x.viewingOwn, Battle.isViewingLeft)
 			move.isstab = Utils.isSTAB(move, move.type, ownTypes)
 		end

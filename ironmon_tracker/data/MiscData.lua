@@ -122,6 +122,48 @@ MiscData.HealingItems = {
 		amount = 80,
 		type = MiscData.HealingType.Constant,
 		pocket = MiscData.BagPocket.Items,
+	},
+	[72] = {
+		id = 72,
+		name = "Moomoo Milk",
+		amount = 100,
+		type = MiscData.HealingType.Constant,
+		pocket = MiscData.BagPocket.Items
+	},
+	[114] = {
+		id = 114,
+		name = "Rage Candy Bar",
+		amount = 20,
+		type = MiscData.HealingType.Constant,
+		pocket = MiscData.BagPocket.Items
+	},
+	[121] = {
+		id = 121,
+		name = "Energy Powder",
+		amount = 50,
+		type = MiscData.HealingType.Constant,
+		pocket = MiscData.BagPocket.Items
+	},
+	[122] = {
+		id = 122,
+		name = "Energy Root",
+		amount = 200,
+		type = MiscData.HealingType.Constant,
+		pocket = MiscData.BagPocket.Items
+	},
+	[139] = {
+		id = 139,
+		name = "Berry Juice",
+		amount = 20,
+		type = MiscData.HealingType.Constant,
+		pocket = MiscData.BagPocket.Items
+	},
+	[173] = {
+		id = 173,
+		name = "Berry",
+		amount = 10,
+		type = MiscData.HealingType.Constant,
+		pocket = MiscData.BagPocket.Items
 	}
 }
 
