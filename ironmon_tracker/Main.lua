@@ -1,7 +1,7 @@
 Main = {}
 
 -- The latest version of the tracker. Should be updated with each PR.
-Main.Version = { major = "1", minor = "2", patch = "2" }
+Main.Version = { major = "0", minor = "3", patch = "2" }
 
 Main.CreditsList = { -- based on the PokemonBizhawkLua project by MKDasher
 	CreatedBy = "Besteon",
@@ -70,7 +70,6 @@ function Main.Initialize()
 	end
 
 	Main.LoadSettings()
-
 	print(string.format("Ironmon Tracker v%s successfully loaded", Main.TrackerVersion))
 
 	-- Get the quickload files just once to be used in several places during start-up, removed later
@@ -321,7 +320,6 @@ function Main.CheckForVersionUpdate(forcedCheck)
 		Main.Version.dateChecked = todaysDate
 
 		Utils.tempDisableBizhawkSound()
-
 		local updatecheckCommand = string.format('curl "%s" --ssl-no-revoke', FileManager.Urls.VERSION)
 		local success, fileLines = FileManager.tryOsExecute(updatecheckCommand)
 		if success then
