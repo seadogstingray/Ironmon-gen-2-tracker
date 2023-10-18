@@ -243,6 +243,13 @@ function GameSettings.initialize()
 				amount = 10,
 				type = MiscData.HealingType.Constant,
 				pocket = MiscData.BagPocket.Items
+			},
+			[174] = {
+				id = 174,
+				name = "Gold Berry",
+				amount = 30,
+				type = MiscData.HealingType.Constant,
+				pocket = MiscData.BagPocket.Items
 			}
 		}
 	else
