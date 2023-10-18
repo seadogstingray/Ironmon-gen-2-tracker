@@ -121,42 +121,6 @@ TrackerScreen.Buttons = {
 			InfoScreen.changeScreenView(InfoScreen.Screens.ROUTE_INFO, routeInfo)
 		end
 	},
-	AbilityUpper = {
-		type = Constants.ButtonTypes.PIXELIMAGE,
-		image = Constants.PixelImages.NOTEPAD,
-		textColor = "Default text",
-		clickableArea = { Constants.SCREEN.WIDTH + 37, 35, 63, 11},
-		box = { Constants.SCREEN.WIDTH + 88, 43, 11, 11 },
-		isVisible = function() return not Tracker.Data.isViewingOwn end,
-		onClick = function(self)
-			local pokemon = Tracker.getViewedPokemon()
-			if pokemon ~= nil and PokemonData.isValid(pokemon.pokemonID) then
-				local trackedAbilities = Tracker.getAbilities(pokemon.pokemonID)
-				InfoScreen.changeScreenView(InfoScreen.Screens.ABILITY_INFO, trackedAbilities[1].id)
-			end
-		end
-	},
-	AbilityLower = {
-		type = Constants.ButtonTypes.PIXELIMAGE,
-		image = Constants.PixelImages.NOTEPAD,
-		textColor = "Default text",
-		clickableArea = { Constants.SCREEN.WIDTH + 37, 46, 63, 11},
-		box = { Constants.SCREEN.WIDTH + 88, 43, 11, 11 },
-		isVisible = function() return true end,
-		onClick = function(self)
-			local pokemon = Tracker.getViewedPokemon()
-			if pokemon ~= nil and PokemonData.isValid(pokemon.pokemonID) then
-				local abilityId
-				if Tracker.Data.isViewingOwn then
-					abilityId = PokemonData.getAbilityId(pokemon.pokemonID, pokemon.abilityNum)
-				else
-					local trackedAbilities = Tracker.getAbilities(pokemon.pokemonID)
-					abilityId = trackedAbilities[2].id
-				end
-				InfoScreen.changeScreenView(InfoScreen.Screens.ABILITY_INFO, abilityId)
-			end
-		end
-	},
 	MovesHistory = {
 		-- Invisible clickable button
 		type = Constants.ButtonTypes.NO_BORDER,

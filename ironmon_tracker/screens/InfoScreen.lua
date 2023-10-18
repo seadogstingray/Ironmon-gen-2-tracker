@@ -23,13 +23,6 @@ InfoScreen.Buttons = {
 		onClick = function(self) InfoScreen.openMoveInfoWindow() end
 	},
 	LookupAbility = {
-		type = Constants.ButtonTypes.PIXELIMAGE,
-		image = Constants.PixelImages.MAGNIFYING_GLASS,
-		textColor = "Default text",
-		box = { Constants.SCREEN.WIDTH + 133, 60, 10, 10, },
-		boxColors = { "Upper box border", "Upper box background" },
-		isVisible = function() return InfoScreen.viewScreen == InfoScreen.Screens.ABILITY_INFO end,
-		onClick = function(self) InfoScreen.openAbilityInfoWindow() end
 	},
 	LookupPokemon = {
 		type = Constants.ButtonTypes.PIXELIMAGE,
@@ -553,7 +546,7 @@ function InfoScreen.drawScreen()
 			InfoScreen.TemporaryButtons = InfoScreen.getPokemonButtonsForEncounterArea(mapId, encounterArea)
 			InfoScreen.drawRouteInfoScreen(mapId, encounterArea)
 		end
-	-- elseif (InfoScreen.viewScreen == InfoScreen.Screens.ABILITY_INFO) then
+	elseif (InfoScreen.viewScreen == InfoScreen.Screens.ABILITY_INFO) then
 	-- 	local abilityId = InfoScreen.infoLookup
 	-- 	InfoScreen.drawAbilityInfoScreen(abilityId)
 	end
@@ -874,12 +867,6 @@ function InfoScreen.drawAbilityInfoScreen(abilityId)
 		Drawing.drawText(offsetX - 1 + 1, offsetY + 1 - 3, data.a.name, boxInfoTopShadow, nil, 12, Constants.Font.FAMILY, "bold")
 	end
 	Drawing.drawText(offsetX - 1, offsetY - 3, data.a.name, Theme.COLORS["Default text"], nil, 12, Constants.Font.FAMILY, "bold")
-
-	--SEARCH ICON
-	local lookupAbility = InfoScreen.Buttons.LookupAbility
-	lookupAbility.box = {Constants.SCREEN.WIDTH + 133, offsetY, 10, 10,}
-	Drawing.drawButton(lookupAbility, boxInfoTopShadow)
-	offsetY = offsetY + linespacing * 2 - 5
 
 	-- DESCRIPTION
 	if data.a.description ~= nil then
