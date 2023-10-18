@@ -6,7 +6,7 @@ UpdateOrInstall = {
 	thisFileName = "UpdateOrInstall.lua",
 	trackerFileName = "Ironmon-Tracker.lua",
 	slash = package.config:sub(1,1) or "\\", -- Windows is \ and Linux is /
-	TAR_URL = "https://github.com/mollo010/Ironmon-gen-tracker/archive/main.tar.gz",
+	TAR_URL = "https://github.com/seadogstingray/Ironmon-gen-2-tracker/archive/main.tar.gz",
 	archiveName = "Ironmon-gen-tracker-main.tar.gz",
 	archiveFolder = "Ironmon-gen-tracker-main",
 }
@@ -14,7 +14,7 @@ UpdateOrInstall = {
 -- Beta testers can have this enabled to receive live updates from STAGING branch
 UpdateOrInstall.Dev = {
 	enabled = false, -- Verify this remains "false" for main release
-	TAR_URL = "https://github.com/mollo010/Ironmon-gen-tracker/archive/main.tar.gz",
+	TAR_URL = "https://github.com/seadogstingray/Ironmon-gen-2-tracker/archive/main.tar.gz",
 	archiveName = "Ironmon-Tracker-beta-test.tar.gz",
 	archiveFolder = "Ironmon-Tracker-beta-test",
 }
