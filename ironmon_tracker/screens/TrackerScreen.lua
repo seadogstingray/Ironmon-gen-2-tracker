@@ -744,7 +744,7 @@ function TrackerScreen.drawPokemonInfoArea(data)
 	end
 
 	-- HELD ITEM AND ABILITIES
-	--Drawing.drawText(Constants.SCREEN.WIDTH + offsetX, offsetY, data.p.line1, Theme.COLORS["Intermediate text"], shadowcolor)
+	Drawing.drawText(Constants.SCREEN.WIDTH + offsetX, offsetY, data.p.line1, Theme.COLORS["Intermediate text"], shadowcolor)
 	--offsetY = offsetY + linespacing
 	--Drawing.drawText(Constants.SCREEN.WIDTH + offsetX, offsetY, data.p.line2, Theme.COLORS["Intermediate text"], shadowcolor)
 	--offsetY = offsetY + linespacing

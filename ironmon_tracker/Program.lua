@@ -705,8 +705,7 @@ function Program.readNewPokemonGen2(startAddress, id)
 	local train_id =id
 
 
-	local item =Memory.readbyte(startAddress+1)
-
+	local item =Memory.readbyte(GameSettings.pItem)+1
 
 	return {
 		personality = (id),

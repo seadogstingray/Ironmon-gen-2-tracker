@@ -268,6 +268,7 @@ function GameSettings.setGen2Addresses()
 		offset = {0x080425B1},
 		---Ram  Addresses
 		pstats = {0x02001cdf},
+		pItem = {0x02001ce0},
 		estats = {0x02001206},
 		gTurn = {0x020006dd},
 		oppTurn = {0x020006dc},
