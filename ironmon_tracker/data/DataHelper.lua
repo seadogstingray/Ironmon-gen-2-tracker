@@ -472,17 +472,10 @@ function DataHelper.buildAbilityInfoDisplay(abilityId)
 	data.a = {} -- data about the Ability itself
 	data.x = {} -- misc data to display
 
-	local ability
-	if abilityId == nil or not AbilityData.isValid(abilityId) then
-		ability = AbilityData.DefaultAbility
-	else
-		ability = AbilityData.Abilities[abilityId]
-	end
-
-	data.a.id = ability.id or 0
-	data.a.name = ability.name or Constants.BLANKLINE
-	data.a.description = ability.description or Constants.BLANKLINE
-	data.a.descriptionEmerald = ability.descriptionEmerald or Constants.BLANKLINE
+	data.a.id = 0
+	data.a.name = Constants.BLANKLINE
+	data.a.description = Constants.BLANKLINE
+	data.a.descriptionEmerald = Constants.BLANKLINE
 
 	data.x = nil -- Currently unused
 

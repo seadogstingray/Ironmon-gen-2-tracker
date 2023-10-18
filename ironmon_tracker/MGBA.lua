@@ -225,10 +225,10 @@ MGBA.Screens = {
 				end
 			end
 
-			if self.data == nil or self.abilityId ~= self.data.a.id then
-				self.data = DataHelper.buildAbilityInfoDisplay(self.abilityId)
-				self.displayLines, self.isUpdated = MGBADisplay.Utils.tryUpdatingLines(MGBADisplay.LineBuilder.buildAbilityInfo, self.displayLines, self.data)
-			end
+			-- if self.data == nil or self.abilityId ~= self.data.a.id then
+			-- 	self.data = DataHelper.buildAbilityInfoDisplay(self.abilityId)
+			-- 	self.displayLines, self.isUpdated = MGBADisplay.Utils.tryUpdatingLines(MGBADisplay.LineBuilder.buildAbilityInfo, self.displayLines, self.data)
+			-- end
 		end,
 	},
 	LookupRoute = {
