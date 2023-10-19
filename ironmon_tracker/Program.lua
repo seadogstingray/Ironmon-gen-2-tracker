@@ -1111,8 +1111,7 @@ function Program.updateBadgesObtained()
 end
 
 function Program.updateMapLocation()
-	local newMapId = Memory.readbyte(GameSettings.gMapHeader ) -- 0x12: mapLayoutId
-
+	local newMapId = Memory.readbyte(GameSettings.gMapHeader) -- 0x12: mapLayoutId
 	-- If the player is in a new area, auto-lookup for mGBA screen
 	if not Main.IsOnBizhawk() and newMapId ~= Program.GameData.mapId then
 		local isFirstLocation = Program.GameData.mapId == nil or Program.GameData.mapId == 0
@@ -1123,7 +1122,6 @@ end
 
 -- More or less used to determine if the player has begun playing the game, returns true if so.
 function Program.isValidMapLocation()
-
 	return Program.GameData.mapId ~= nil --and Program.GameData.mapId ~= 0
 end
 

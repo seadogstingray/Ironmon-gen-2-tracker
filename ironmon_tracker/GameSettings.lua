@@ -285,7 +285,7 @@ function GameSettings.setGen2Addresses()
 		gBattlerPartyIndexes = {0x02001163},
 		gBattleMons = {0x0200064a},
 		gBattleTypeFlags = {0x0200122d},
-		gMapHeader = {0x0200015a},
+		gMapHeader = {0x020002d9},
 		gPlayerPartyCount = {0x02000cd7},
 		badgeOffset = {0x02001857},
 		bagPocket_Items_offset = {0x02001893},
