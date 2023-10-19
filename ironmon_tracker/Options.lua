@@ -43,7 +43,7 @@ Options = {
 	["Show Team View"] = false,
 
 	CONTROLS = {
-		["Load next seed"] = "A, B, Start",
+		["Load next seed"] = "A, B, Start, Select",
 		["Toggle view"] = "Start",
 		["Cycle through stats"] = "L",
 		["Mark stat"] = "R",
