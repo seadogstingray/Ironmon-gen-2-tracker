@@ -72,7 +72,7 @@ MiscData.Natures = {
 }
 
 MiscData.Items = {
-	"?",
+	"---",
 	"MASTER BALL",
 	"ULTRA BALL",
 	"BRIGHT POWDER",
