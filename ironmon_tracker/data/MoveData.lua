@@ -2055,7 +2055,7 @@ MoveData.Moves = {
 	},
 	{
 		id = "176",
-		name = "Conversion 2",
+		name = "Conversion2",
 		type = PokemonData.Types.NORMAL,
 		power = "0",
 		pp = "30",

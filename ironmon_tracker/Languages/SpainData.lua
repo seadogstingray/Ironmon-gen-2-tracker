@@ -176,7 +176,7 @@ SpainData.Moves = {
 	"Ronquido", --Ronquido english:Snore
 	"Maldici" .. Constants.getC("ó") .. "n", --Maldición english:Curse
 	"Azote", --Azote english:Flail
-	"Conversi" .. Constants.getC("ó") .. "n2", --Conversión2 english:Conversion 2
+	"Conversi" .. Constants.getC("ó") .. "n2", --Conversión2 english:Conversion2
 	"Aerochorro", --Aerochorro english:Aeroblast
 	"Esporagod" .. Constants.getC("ó") .. "n", --Esporagodón english:Cotton Spore
 	"Inversi" .. Constants.getC("ó") .. "n", --Inversión english:Reversal

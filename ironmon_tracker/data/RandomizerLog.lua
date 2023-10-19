@@ -1054,7 +1054,7 @@ function RandomizerLog.setupMappings()
 		["snore"] = 173,
 		["curse"] = 174,
 		["flail"] = 175,
-		["conversion 2"] = 176,
+		["conversion2"] = 176,
 		["aeroblast"] = 177,
 		["cotton spore"] = 178,
 		["reversal"] = 179,

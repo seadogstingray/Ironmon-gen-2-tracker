@@ -176,7 +176,7 @@ GermanyData.Moves = {
 	"Schnarcher", --Schnarcher english:Snore
 	"Fluch", --Fluch english:Curse
 	"Dreschflegel", --Dreschflegel english:Flail
-	"Umwandlung2", --Umwandlung2 english:Conversion 2
+	"Umwandlung2", --Umwandlung2 english:Conversion2
 	"Luftstoss", --Luftstoss english:Aeroblast
 	"Baumwollsaat", --Baumwollsaat english:Cotton Spore
 	"Gegenschlag", --Gegenschlag english:Reversal

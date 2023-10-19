@@ -176,7 +176,7 @@ ItalyData.Moves = {
 	"Russare", --Russare english:Snore
 	"Maledizione", --Maledizione english:Curse
 	"Flagello", --Flagello english:Flail
-	"Conversione2", --Conversione2 english:Conversion 2
+	"Conversione2", --Conversione2 english:Conversion2
 	"Aerocolpo", --Aerocolpo english:Aeroblast
 	"Cottonspora", --Cottonspora english:Cotton Spore
 	"Contropiede", --Contropiede english:Reversal

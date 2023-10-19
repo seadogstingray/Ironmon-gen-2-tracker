@@ -20,31 +20,6 @@ TrainerData.FileInfo = {
 	maxWidth = 58,
 	maxHeight = 63,
 
-	["e-rival-brendan"] =		{ width = 40, height = 55, offsetX = 0, offsetY = 6, },
-	["e-rival-may"] =			{ width = 40, height = 55, offsetX = 0, offsetY = 6, },
-	["rs-rival-brendan"] =		{ width = 40, height = 55, offsetX = 0, offsetY = 6, },
-	["rs-rival-may"] =			{ width = 40, height = 55, offsetX = 0, offsetY = 6, },
-	["rse-wally"] =				{ width = 38, height = 57, offsetX = 10, offsetY = 4, },
-	["rse-archie"] =			{ width = 38, height = 63, offsetX = 8, offsetY = 0, },
-	["rse-maxie"] =				{ width = 38, height = 63, offsetX = 9, offsetY = 0, },
-	["rse-tabitha"] =			{ width = 50, height = 62, offsetX = 0, offsetY = 0, },
-	["rse-gymleader-1"] =		{ width = 35, height = 54, offsetX = 4, offsetY = 6, },
-	["rse-gymleader-2"] =		{ width = 51, height = 61, offsetX = 0, offsetY = 2, },
-	["rse-gymleader-3"] =		{ width = 35, height = 60, offsetX = 0, offsetY = 2, },
-	["rse-gymleader-4"] =		{ width = 45, height = 61, offsetX = 3, offsetY = 2, },
-	["rse-gymleader-5"] =		{ width = 35, height = 63, offsetX = 0, offsetY = 0, },
-	["rse-gymleader-6"] =		{ width = 45, height = 60, offsetX = 0, offsetY = 2, },
-	["rse-gymleader-7"] =		{ width = 57, height = 54, offsetX = 0, offsetY = 4, },
-	["rse-elitefour-1"] =		{ width = 40, height = 54, offsetX = 0, offsetY = 6, },
-	["rse-elitefour-2"] =		{ width = 38, height = 57, offsetX = 5, offsetY = 4, },
-	["rse-elitefour-3"] =		{ width = 40, height = 61, offsetX = 0, offsetY = 2, },
-	["rse-elitefour-4"] =		{ width = 47, height = 63, offsetX = 3, offsetY = 1, },
-	["e-gymleader-8"] =			{ width = 40, height = 63, offsetX = 0, offsetY = 3, },
-	["rs-gymleader-8"] =		{ width = 48, height = 55, offsetX = 0, offsetY = 6, },
-	["e-elitefour-champ"] =		{ width = 56, height = 59, offsetX = 0, offsetY = 2, },
-	["rs-elitefour-champ"] =	{ width = 34, height = 63, offsetX = 0, offsetY = 0, },
-	["e-final-steven"] =		{ width = 34, height = 63, offsetX = 0, offsetY = 2, },
-
 	["frlg-rival-a"] =			{ width = 42, height = 57, offsetX = 1, offsetY = 3, },
 	["frlg-rival-b"] =			{ width = 42, height = 60, offsetX = 0, offsetY = 2, },
 	["frlg-rival-c"] =			{ width = 42, height = 60, offsetX = 0, offsetY = 3, },
@@ -57,18 +32,25 @@ TrainerData.FileInfo = {
 	["frlg-gymleader-6"] =		{ width = 43, height = 56, offsetX = 0, offsetY = 4, },
 	["frlg-gymleader-7"] =		{ width = 44, height = 61, offsetX = 0, offsetY = 2, },
 	["frlg-gymleader-8"] =		{ width = 42, height = 63, offsetX = 2, offsetY = 1, },
+	["frlg-gymleader-9"] =		{ width = 43, height = 63, offsetX = 3, offsetY = 2, },
+	["frlg-gymleader-10"] =		{ width = 43, height = 61, offsetX = 2, offsetY = 2, },
+	["frlg-gymleader-11"] =		{ width = 43, height = 61, offsetX = 0, offsetY = 2, },
+	["frlg-gymleader-12"] =		{ width = 43, height = 57, offsetX = 2, offsetY = 3, },
+	["frlg-gymleader-13"] =		{ width = 46, height = 54, offsetX = 0, offsetY = 4, },
+	["frlg-gymleader-14"] =		{ width = 43, height = 56, offsetX = 0, offsetY = 4, },
+	["frlg-gymleader-15"] =		{ width = 44, height = 61, offsetX = 0, offsetY = 2, },
+	["frlg-gymleader-16"] =		{ width = 42, height = 63, offsetX = 2, offsetY = 1, },
 	["frlg-elitefour-1"] =		{ width = 38, height = 62, offsetX = 0, offsetY = 2, },
 	["frlg-elitefour-2"] =		{ width = 53, height = 52, offsetX = 0, offsetY = 5, },
 	["frlg-elitefour-3"] =		{ width = 30, height = 57, offsetX = 1, offsetY = 3, },
 	["frlg-elitefour-4"] =		{ width = 58, height = 60, offsetX = 0, offsetY = 3, },
+	["frlg-elitefour-5"] =		{ width = 53, height = 52, offsetX = 0, offsetY = 5, },
 	["unknown-a"] =				{ width = 42, height = 55, offsetX = 0, offsetY = 8, },
 	["unknown-b"] =				{ width = 42, height = 55, offsetX = 0, offsetY = 8, },
 }
 
 function TrainerData.initialize()
-
-		TrainerData.setupTrainersAsFRLG()
-
+		TrainerData.setupTrainersAsGSC()
 end
 
 -- Returns a table with trainer info { name, filterGroup, filename, }
@@ -84,682 +66,129 @@ function TrainerData.getTrainerInfo(trainerId)
 	return TrainerData.Trainers[trainerId]
 end
 
-function TrainerData.setupTrainersAsRubySapphire()
+
+function TrainerData.setupTrainersAsGSC()
 	TrainerData.GymTMs = {
-		{ leader = "Roxanne", number = 39, },
-		{ leader = "Brawly", number = 8, },
-		{ leader = "Wattson", number = 34, },
-		{ leader = "Flannery", number = 50, },
-		{ leader = "Norman", number = 42, },
-		{ leader = "Winona", number = 40, },
-		{ leader = "Tate & Liza", number = 4, },
-		{ leader = "Wallace", number = 3, },
-	}
-
-	TrainerData.Trainers = {
-		[261] = {
-			name = "Sidney",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rse-elitefour-1",
-		},
-		[262] = {
-			name = "Phoebe",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rse-elitefour-2",
-		},
-		[263] = {
-			name = "Glacia",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rse-elitefour-3",
-		},
-		[264] = {
-			name = "Drake",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rse-elitefour-4",
-		},
-		[265] = {
-			name = "Roxanne",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-1",
-		},
-		[266] = {
-			name = "Brawly",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-2",
-		},
-		[267] = {
-			name = "Wattson",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-3",
-		},
-		[268] = {
-			name = "Flannery",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-4",
-		},
-		[269] = {
-			name = "Norman",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-5",
-		},
-		[270] = {
-			name = "Winona",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-6",
-		},
-		[271] = {
-			name = "Tate & Liza",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-7",
-		},
-		[272] = {
-			name = "Wallace",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rs-gymleader-8",
-		},
-		[335] = {
-			name = "Steven",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rs-elitefour-champ",
-		},
-		[520] = {
-			name = "Brendan 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[523] = {
-			name = "Brendan 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[526] = {
-			name = "Brendan 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[521] = {
-			name = "Brendan 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[524] = {
-			name = "Brendan 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[527] = {
-			name = "Brendan 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[522] = {
-			name = "Brendan 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[525] = {
-			name = "Brendan 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[528] = {
-			name = "Brendan 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[661] = {
-			name = "Brendan 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[662] = {
-			name = "Brendan 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[663] = {
-			name = "Brendan 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[529] = {
-			name = "May 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Left",
-		},
-		[532] = {
-			name = "May 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Middle",
-		},
-		[535] = {
-			name = "May 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Right",
-		},
-		[530] = {
-			name = "May 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Left",
-		},
-		[533] = {
-			name = "May 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Middle",
-		},
-		[536] = {
-			name = "May 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Right",
-		},
-		[531] = {
-			name = "May 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Left",
-		},
-		[534] = {
-			name = "May 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Middle",
-		},
-		[537] = {
-			name = "May 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Right",
-		},
-		[664] = {
-			name = "May 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Left",
-		},
-		[665] = {
-			name = "May 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Middle",
-		},
-		[666] = {
-			name = "May 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "rs-rival-may",
-			whichRival = "May Right",
-		},
-		[1] = {
-			name = "Archie 1",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-archie",
-		},
-		[35] = {
-			name = "Archie 2",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-archie",
-		},
-		[34] = {
-			name = "Archie 3",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-archie",
-		},
-		[566] = {
-			name = "Maxie 1",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-maxie",
-		},
-		[602] = {
-			name = "Maxie 2",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-maxie",
-		},
-		[601] = {
-			name = "Maxie 3",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-maxie",
-		},
-		[656] = {
-			name = "Wally 1",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[519] = {
-			name = "Wally 2",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[657] = {
-			name = "Wally 3",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[658] = {
-			name = "Wally 4",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[659] = {
-			name = "Wally 5",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[660] = {
-			name = "Wally 6",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-	}
-end
-
-function TrainerData.setupTrainersAsEmerald()
-	TrainerData.GymTMs = {
-		{ leader = "Roxanne", number = 39, },
-		{ leader = "Brawly", number = 8, },
-		{ leader = "Wattson", number = 34, },
-		{ leader = "Flannery", number = 50, },
-		{ leader = "Norman", number = 42, },
-		{ leader = "Winona", number = 40, },
-		{ leader = "Tate & Liza", number = 4, },
-		{ leader = "Juan", number = 3, },
-	}
-
-	TrainerData.Trainers = {
-		[261] = {
-			name = "Sidney",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rse-elitefour-1",
-		},
-		[262] = {
-			name = "Phoebe",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rse-elitefour-2",
-		},
-		[263] = {
-			name = "Glacia",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rse-elitefour-3",
-		},
-		[264] = {
-			name = "Drake",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "rse-elitefour-4",
-		},
-		[265] = {
-			name = "Roxanne",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-1",
-		},
-		[266] = {
-			name = "Brawly",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-2",
-		},
-		[267] = {
-			name = "Wattson",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-3",
-		},
-		[268] = {
-			name = "Flannery",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-4",
-		},
-		[269] = {
-			name = "Norman",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-5",
-		},
-		[270] = {
-			name = "Winona",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-6",
-		},
-		[271] = {
-			name = "Tate & Liza",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "rse-gymleader-7",
-		},
-		[272] = {
-			name = "Juan",
-			group = TrainerData.TrainerGroups.Gym,
-			filename = "e-gymleader-8",
-		},
-		[335] = {
-			name = "Wallace",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "e-elitefour-champ",
-		},
-		[520] = {
-			name = "Brendan 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[523] = {
-			name = "Brendan 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[526] = {
-			name = "Brendan 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[593] = {
-			name = "Brendan 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[592] = {
-			name = "Brendan 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[599] = {
-			name = "Brendan 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[521] = {
-			name = "Brendan 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[524] = {
-			name = "Brendan 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[527] = {
-			name = "Brendan 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[522] = {
-			name = "Brendan 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[525] = {
-			name = "Brendan 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[528] = {
-			name = "Brendan 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[661] = {
-			name = "Brendan 5",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Left",
-		},
-		[662] = {
-			name = "Brendan 5",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Middle",
-		},
-		[663] = {
-			name = "Brendan 5",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-brendan",
-			whichRival = "Brendan Right",
-		},
-		[529] = {
-			name = "May 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Left",
-		},
-		[532] = {
-			name = "May 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Middle",
-		},
-		[535] = {
-			name = "May 1",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Right",
-		},
-		[600] = {
-			name = "May 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Left",
-		},
-		[768] = {
-			name = "May 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Middle",
-		},
-		[769] = {
-			name = "May 2",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Right",
-		},
-		[530] = {
-			name = "May 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Left",
-		},
-		[533] = {
-			name = "May 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Middle",
-		},
-		[536] = {
-			name = "May 3",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Right",
-		},
-		[531] = {
-			name = "May 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Left",
-		},
-		[534] = {
-			name = "May 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Middle",
-		},
-		[537] = {
-			name = "May 4",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Right",
-		},
-		[664] = {
-			name = "May 5",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Left",
-		},
-		[665] = {
-			name = "May 5",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Middle",
-		},
-		[666] = {
-			name = "May 5",
-			group = TrainerData.TrainerGroups.Rival,
-			filename = "e-rival-may",
-			whichRival = "May Right",
-		},
-		[34] = {
-			name = "Archie",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-archie",
-		},
-		[514] = {
-			name = "Tabitha (duo)",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-tabitha",
-		},
-		[602] = {
-			name = "Maxie 1",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-maxie",
-		},
-		[601] = {
-			name = "Maxie 2",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-maxie",
-		},
-		[734] = {
-			name = "Maxie (duo)",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-maxie",
-		},
-		[656] = {
-			name = "Wally 1",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[519] = {
-			name = "Wally 2",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[657] = {
-			name = "Wally 3",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[658] = {
-			name = "Wally 4",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[659] = {
-			name = "Wally 5",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[660] = {
-			name = "Wally 6",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "rse-wally",
-		},
-		[804] = {
-			name = "Steven",
-			group = TrainerData.TrainerGroups.Boss,
-			filename = "e-final-steven",
-		},
-	}
-end
-
-function TrainerData.setupTrainersAsFRLG()
-	TrainerData.GymTMs = {
-		{ leader = "Brock", number = 39, },
-		{ leader = "Misty", number = 3, },
-		{ leader = "Lt. Surge", number = 34, },
+		{ leader = "Falkner", number = 31, },
+		{ leader = "Bugsy", number = 49, },
+		{ leader = "Whitney", number = 45, },
+		{ leader = "Morty", number = 30, },
+		{ leader = "Chuck", number = 1, },
+		{ leader = "Jasmine", number = 23, },
+		{ leader = "Pryce", number = 16, },
+		{ leader = "Claire", number = 24, },
+		{ leader = "Lt. Surge", number = 0, },
+		{ leader = "Sabrina", number = 0, },
 		{ leader = "Erika", number = 19, },
-		{ leader = "Koga", number = 6, },
-		{ leader = "Sabrina", number = 4, },
-		{ leader = "Blaine", number = 38, },
-		{ leader = "Giovanni", number = 26, },
+		{ leader = "Jasmine", number = 6, },
+		{ leader = "Brock", number = 0, },
+		{ leader = "Blaine", number = 0, },
+		{ leader = "Blue", number = 0, },
 	}
 
 	TrainerData.Trainers = {
-		[365] = {
-			name = "Lorelei",
+		[24] = {
+			name = "Will",
 			group = TrainerData.TrainerGroups.Elite4,
 			filename = "frlg-elitefour-1",
 		},
-		[337] = {
+		[30] = {
+			name = "Koga",
+			group = TrainerData.TrainerGroups.Elite4,
+			filename = "frlg-elitefour-3",
+		},
+		[28] = {
 			name = "Bruno",
 			group = TrainerData.TrainerGroups.Elite4,
 			filename = "frlg-elitefour-2",
 		},
-		[390] = {
-			name = "Agatha",
+		[29] = {
+			name = "Karen",
 			group = TrainerData.TrainerGroups.Elite4,
 			filename = "frlg-elitefour-3",
 		},
-		[391] = {
+		[31] = {
 			name = "Lance",
 			group = TrainerData.TrainerGroups.Elite4,
 			filename = "frlg-elitefour-4",
 		},
-		[338] = {
+		[1] = {
+			name = "Falkner",
+			group = TrainerData.TrainerGroups.Gym,
+			filename = "frlg-gymleader-1",
+		},
+		[3] = {
+			name = "Bugsy",
+			group = TrainerData.TrainerGroups.Gym,
+			filename = "frlg-gymleader-1",
+		},
+		[2] = {
+			name = "Whitney",
+			group = TrainerData.TrainerGroups.Gym,
+			filename = "frlg-gymleader-1",
+		},
+		[4] = {
+			name = "Morty",
+			group = TrainerData.TrainerGroups.Gym,
+			filename = "frlg-gymleader-1",
+		},
+		[7] = {
+			name = "Chuck",
+			group = TrainerData.TrainerGroups.Gym,
+			filename = "frlg-gymleader-1",
+		},
+		[6] = {
+			name = "Jasmine",
+			group = TrainerData.TrainerGroups.Gym,
+			filename = "frlg-gymleader-1",
+		},
+		[5] = {
+			name = "Pryce",
+			group = TrainerData.TrainerGroups.Gym,
+			filename = "frlg-gymleader-1",
+		},
+		[8] = {
+			name = "Clair",
+			group = TrainerData.TrainerGroups.Gym,
+			filename = "frlg-gymleader-1",
+		},
+		[32] = {
 			name = "Brock",
 			group = TrainerData.TrainerGroups.Gym,
 			filename = "frlg-gymleader-1",
 		},
-		[339] = {
+		[33] = {
 			name = "Misty",
 			group = TrainerData.TrainerGroups.Gym,
 			filename = "frlg-gymleader-2",
 		},
-		[340] = {
+		[34] = {
 			name = "Lt. Surge",
 			group = TrainerData.TrainerGroups.Gym,
 			filename = "frlg-gymleader-3",
 		},
-		[341] = {
+		[40] = {
 			name = "Erika",
 			group = TrainerData.TrainerGroups.Gym,
 			filename = "frlg-gymleader-4",
 		},
-		[342] = {
-			name = "Koga",
+		[115] = {
+			name = "Janine",
 			group = TrainerData.TrainerGroups.Gym,
 			filename = "frlg-gymleader-5",
 		},
-		[344] = {
+		[230] = {
 			name = "Sabrina",
 			group = TrainerData.TrainerGroups.Gym,
 			filename = "frlg-gymleader-6",
 		},
-		[343] = {
+		[381] = {
 			name = "Blaine",
 			group = TrainerData.TrainerGroups.Gym,
 			filename = "frlg-gymleader-7",
 		},
-		[277] = {
-			name = "Giovanni",
+		[533] = {
+			name = "Blue",
 			group = TrainerData.TrainerGroups.Gym,
 			filename = "frlg-gymleader-8",
 		},
@@ -890,24 +319,6 @@ function TrainerData.setupTrainersAsFRLG()
 			filename = "frlg-rival-a",
 			whichRival = "Right",
 		},
-		[362] = {
-			name = "Champion",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "frlg-rival-c",
-			whichRival = "Middle",
-		},
-		[363] = {
-			name = "Champion",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "frlg-rival-c",
-			whichRival = "Left",
-		},
-		[364] = {
-			name = "Champion",
-			group = TrainerData.TrainerGroups.Elite4,
-			filename = "frlg-rival-c",
-			whichRival = "Right",
-		},
 		[275] = {
 			name = "Giovanni 1",
 			group = TrainerData.TrainerGroups.Boss,
@@ -918,8 +329,8 @@ function TrainerData.setupTrainersAsFRLG()
 			group = TrainerData.TrainerGroups.Boss,
 			filename = "frlg-gymleader-8",
 		},
-		[400] = {
-			name = "Dojo Leader",
+		[532] = {
+			name = "Pkmn Trainer Red",
 			group = TrainerData.TrainerGroups.Boss,
 			filename = "frlg-blackbelt",
 		},

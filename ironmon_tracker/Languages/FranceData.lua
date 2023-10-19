@@ -176,7 +176,7 @@ FranceData.Moves = {
 	"Ronflement", --Ronflement english:Snore
 	"Malediction", --Malediction english:Curse
 	"Fleau", --Fleau english:Flail
-	"Conversion 2", --Conversion 2 english:Conversion 2
+	"Conversion2", --Conversion2 english:Conversion2
 	"Aeroblast", --Aeroblast english:Aeroblast
 	"Spore Coton", --Spore Coton english:Cotton Spore
 	"Contre", --Contre english:Reversal
