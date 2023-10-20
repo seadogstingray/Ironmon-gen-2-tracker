@@ -353,7 +353,7 @@ function TrackerScreen.buildCarousel()
 		getContentList = function()
 			local badgeButtons = {}
 			for index = 1, 8, 1 do
-				local badgeName = "badge" .. index
+				local badgeName = "badge" .. string.format("%02d",index)
 				table.insert(badgeButtons, TrackerScreen.Buttons[badgeName])
 			end
 			return badgeButtons
