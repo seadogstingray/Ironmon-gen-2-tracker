@@ -1101,7 +1101,7 @@ function Program.updateBadgesObtained()
 
 	if badgeBits ~= nil then
 		for index = 1, 8, 1 do
-			local badgeName = "badge" .. index
+			local badgeName = "badge" .. string.format("%02d",index)
 			local badgeButton = TrackerScreen.Buttons[badgeName]
 			local badgeState = Utils.getbits(badgeBits, index - 1, 1)
 			badgeButton:updateState(badgeState)

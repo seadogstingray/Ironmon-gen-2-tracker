@@ -314,7 +314,7 @@ function TrackerScreen.initialize()
 	-- Buttons for each badge
 	local badgeWidth = 16
 	for index = 1, 8, 1 do
-		local badgeName = "badge" .. index
+		local badgeName = "badge" .. string.format("%02d",index)
 		local xOffset = Constants.SCREEN.WIDTH + 7 + ((index-1) * (badgeWidth + 1)) + GameSettings.badgeXOffsets[index]
 
 		TrackerScreen.Buttons[badgeName] = {
@@ -329,7 +329,7 @@ function TrackerScreen.initialize()
 				if self.badgeState ~= state then
 					self.badgeState = state
 					local badgeOffText = Utils.inlineIf(self.badgeState == 0, "_OFF", "")
-					local name = GameSettings.badgePrefix .. "_badge" .. self.badgeIndex .. badgeOffText
+					local name = GameSettings.badgePrefix .. "_badge" .. string.format("%02d",self.badgeIndex) .. badgeOffText
 					self.image = FileManager.buildImagePath(FileManager.Folders.Badges, name, FileManager.Extensions.BADGE)
 				end
 			end

@@ -377,7 +377,7 @@ LogOverlay.NavFilters = {
 		},
 		{
 			label = TrainerData.TrainerGroups.Gym,
-			sortFunc = function(a, b) return a.filename:sub(-1) < b.filename:sub(-1) end,
+			sortFunc = function(a, b) return a.filename:sub(-2) < b.filename:sub(-2) end,
 		},
 		{
 			label = TrainerData.TrainerGroups.Elite4,
@@ -633,7 +633,7 @@ function LogOverlay.buildPagedButtons()
 		}
 
 		if trainerInfo ~= nil and trainerInfo.group == TrainerData.TrainerGroups.Gym then
-			local gymNumber = tonumber(trainerInfo.filename:sub(-1)) -- e.g. "frlg-gymleader-1"
+			local gymNumber = trainerInfo.filename:sub(-2)
 			if gymNumber ~= nil then
 				-- Find the gym leader's TM and add it's trainer id to that tm info
 				for _, gymTMInfo in pairs(gymTMs) do
@@ -798,7 +798,8 @@ end
 function LogOverlay.realignTrainerGrid(gridFilter, sortFunc)
 	-- Default grid to Gym Leaders
 	gridFilter = gridFilter or TrainerData.TrainerGroups.Gym
-	sortFunc = sortFunc or (function(a, b) return a.filename:sub(-1) < b.filename:sub(-1) end)
+
+	sortFunc = sortFunc or (function(a, b) return a.filename:sub(-2) < b.filename:sub(-2) end)
 
 	LogOverlay.Windower.filterGrid = gridFilter
 
@@ -1331,7 +1332,7 @@ function LogOverlay.buildTMGymButtons()
 	local gymColOffsetX = 80 + 17
 	for _, tmButton in pairs(LogOverlay.PagedButtons.TMs) do
 		if tmButton.group == "Gym TMs" then
-			local badgeName = GameSettings.badgePrefix .. "_badge" .. tmButton.gymNumber
+			local badgeName = GameSettings.badgePrefix .. "_badge" .. string.format("%02d",tmButton.gymNumber)
 			local badgeImage = FileManager.buildImagePath(FileManager.Folders.Badges, badgeName, FileManager.Extensions.BADGE)
 			local gymLabel = string.format("Gym %s", tmButton.gymNumber or 0)
 
@@ -1721,6 +1722,7 @@ function LogOverlay.drawTrainerZoomed(x, y, width, height)
 
 	local trainerId = LogOverlay.currentTabInfoId
 	local data = LogOverlay.currentTabData
+
 	if RandomizerLog.Data.Trainers[trainerId] == nil then
 		return borderColor, shadowcolor
 	elseif data == nil then -- ideally this is done only once on tab change
@@ -1732,7 +1734,7 @@ function LogOverlay.drawTrainerZoomed(x, y, width, height)
 	local badgeOffsetX = 0
 	if data.x.gymNumber ~= nil then
 		badgeOffsetX = 3
-		local badgeName = GameSettings.badgePrefix .. "_badge" .. data.x.gymNumber
+		local badgeName = GameSettings.badgePrefix .. "_badge" .. string.format("%02d",data.x.gymNumber)
 		local badgeImage = FileManager.buildImagePath(FileManager.Folders.Badges, badgeName, FileManager.Extensions.BADGE)
 		gui.drawImage(badgeImage, LogOverlay.margin + 1, LogOverlay.tabHeight + 1)
 	end

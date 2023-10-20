@@ -669,7 +669,7 @@ function DataHelper.buildTrainerLogDisplay(trainerId)
 	end
 
 	-- Gym number (if applicable), otherwise nil
-	data.x.gymNumber = tonumber(string.match(data.t.filename, "gymleader%-(%d)"))
+	data.x.gymNumber = tonumber(string.match(data.t.filename, "gymleader%-(%d%d)"))
 
 	return data
 end
