@@ -417,6 +417,7 @@ PokemonData.TypeIndexMap = {
 	[0x05] = PokemonData.Types.ROCK,
 	[0x07] = PokemonData.Types.BUG,
 	[0x08] = PokemonData.Types.GHOST,
+	[0x09] = PokemonData.Types.STEEL,
 	[0x14] = PokemonData.Types.FIRE,
 	[0x15] = PokemonData.Types.WATER,
 	[0x16] = PokemonData.Types.GRASS,
