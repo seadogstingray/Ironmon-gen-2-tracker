@@ -431,7 +431,7 @@ end
 
 function LogOverlay.parseAndDisplay(logpath)
 	-- Check first if data has already been loaded and parsed
-	if RandomizerLog.Data.Settings ~= nil or RandomizerLog.parseLog(logpath) then
+	if RandomizerLog.parseLog(logpath) then
 		LogOverlay.isDisplayed = true
 		LogOverlay.buildPagedButtons()
 		LogOverlay.Windower:changeTab(LogOverlay.Tabs.POKEMON)
