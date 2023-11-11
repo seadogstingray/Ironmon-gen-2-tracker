@@ -288,6 +288,7 @@ function GameSettings.setGen2Addresses()
 		gMapHeader = {0x020002d9},
 		gPlayerPartyCount = {0x02000cd7},
 		badgeOffset = {0x02001857},
+		kantoBadgeOffset = {0x02001858},
 		bagPocket_Items_offset = {0x02001893},
 		bagPocket_Berries_offset = {0x0200131E},
 		bagPocket_Items_Size = {20}
@@ -371,7 +372,7 @@ function GameSettings.setGameInfo(gamecode)
 			VERSION_COLOR = "Crystal",
 			LANGUAGE = "English",
 			BADGE_PREFIX = "GSC",
-			BADGE_XOFFSETS = {1, 1, 0, 0, 1, 1, 1, 1},
+			BADGE_XOFFSETS = {0, 1, 0, -1, 0, 1, 2, 3, 4, 1, -1, -2, -2, -3, -3, -2},
 			GEN = 2
 		},
 		[0x4C574B41] = {

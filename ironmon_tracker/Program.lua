@@ -1096,11 +1096,10 @@ function Program.updateBadgesObtained()
 	end
 
 	local badgeBits = Memory.readbyte(GameSettings.badgeOffset)
-
-
+	local kantoBadgeBits = Memory.readbyte(GameSettings.kantoBadgeOffset)
 
 	if badgeBits ~= nil then
-		for index = 1, 8, 1 do
+		for index = 1, 16, 1 do
 			local badgeName = "badge" .. string.format("%02d",index)
 			local badgeButton = TrackerScreen.Buttons[badgeName]
 			local badgeState = 0
@@ -1108,6 +1107,8 @@ function Program.updateBadgesObtained()
 				badgeState = Utils.getbits(badgeBits, 5, 1)
 			elseif (index == 6) then --Jasmine's Badge is the 5th bit, so need to correct for it
 				badgeState = Utils.getbits(badgeBits, 4, 1)
+			elseif (index > 8) then
+				badgeState = Utils.getbits(kantoBadgeBits, index - 9, 1)
 			else
 				badgeState = Utils.getbits(badgeBits, index - 1, 1)
 			end

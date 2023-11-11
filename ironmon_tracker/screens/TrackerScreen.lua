@@ -312,15 +312,20 @@ function TrackerScreen.initialize()
 	end
 
 	-- Buttons for each badge
-	local badgeWidth = 16
-	for index = 1, 8, 1 do
+	local badgeWidth = 9.5
+	for index = 1, 16, 1 do
 		local badgeName = "badge" .. string.format("%02d",index)
 		local xOffset = Constants.SCREEN.WIDTH + 7 + ((index-1) * (badgeWidth + 1)) + GameSettings.badgeXOffsets[index]
+		local yOffset = 138
+		if index % 2 == 0 then
+			yOffset = yOffset + 5
+			xOffset = Constants.SCREEN.WIDTH + 81 + ((index-8) * (badgeWidth + 1)) + GameSettings.badgeXOffsets[index]
+		end
 
 		TrackerScreen.Buttons[badgeName] = {
 			type = Constants.ButtonTypes.IMAGE,
 			image = FileManager.buildImagePath(FileManager.Folders.Badges, GameSettings.badgePrefix .. "_" .. badgeName .. "_OFF", FileManager.Extensions.BADGE),
-			box = { xOffset, 138, badgeWidth, badgeWidth },
+			box = { xOffset, yOffset, badgeWidth, badgeWidth },
 			badgeIndex = index,
 			badgeState = 0,
 			isVisible = function() return TrackerScreen.carouselIndex == TrackerScreen.CarouselTypes.BADGES end,
@@ -352,7 +357,7 @@ function TrackerScreen.buildCarousel()
 		framesToShow = 210,
 		getContentList = function()
 			local badgeButtons = {}
-			for index = 1, 8, 1 do
+			for index = 1, 16, 1 do
 				local badgeName = "badge" .. string.format("%02d",index)
 				table.insert(badgeButtons, TrackerScreen.Buttons[badgeName])
 			end
