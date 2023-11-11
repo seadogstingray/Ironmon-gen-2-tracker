@@ -1103,7 +1103,14 @@ function Program.updateBadgesObtained()
 		for index = 1, 8, 1 do
 			local badgeName = "badge" .. string.format("%02d",index)
 			local badgeButton = TrackerScreen.Buttons[badgeName]
-			local badgeState = Utils.getbits(badgeBits, index - 1, 1)
+			local badgeState = 0
+			if (index == 5) then --Chuck's badge is the 6th bit, so need to correct for it
+				badgeState = Utils.getbits(badgeBits, 5, 1)
+			elseif (index == 6) then --Jasmine's Badge is the 5th bit, so need to correct for it
+				badgeState = Utils.getbits(badgeBits, 4, 1)
+			else
+				badgeState = Utils.getbits(badgeBits, index - 1, 1)
+			end
 			badgeButton:updateState(badgeState)
 		end
 	end
